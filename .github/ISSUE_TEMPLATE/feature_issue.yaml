@@ -27,7 +27,7 @@ body:
       required: true
 
   - type: textarea
-    id: details
+    id: implementation
     attributes:
       label: 상세 설명
       description: 기능의 작동 방식, 기대 효과, 데이터 흐름 등을 자세히 작성해주세요.
@@ -39,16 +39,17 @@ body:
       required: true
 
   - type: textarea
-    id: details
+    id: reference
     attributes:
       label: 참고자료 / 관련 코드
       description: 참고한 링크, 예시 코드, 이슈 번호 등을 입력해주세요.
       placeholder: |
         - 링크: www.example.com
-        - 코드: ''' python
+        - 코드:
+          ```python
           def example():
               pass
-          '''
-        - 이슈: 시작#12
+          ```
+        - 관련 이슈: #12
     validations:
       required: false
