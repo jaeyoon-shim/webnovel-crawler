@@ -1,47 +1,57 @@
-name: "✨ 기능 개발 요청"
-description: 새로운 기능 추가나 기존 기능 개선 제안용
-title: "[Feature] 제목을 입력해주세요"
-labels: ["enhancement", "기능"]
+name: "🐞 버그 보고"
+description: 크롤링, 전처리, 분석  중 발생한 문제를 보고하고 수정 요청할 때 사용
+title: "[Bug] 문제 상황을 요약해 주세요"
+labels: ["bug", "에러", "오류", "긴급"]
 body:
   - type: markdown
     attributes:
       value: |
-        새로운 기능 개발이나 기존 기능 개선을 제안해주세요.
+        웹소설 크롤링, 전처리, 감정 분석 중 발생한 **버그, 오류, 에러**를 아래 형식에 맞춰 상세히 적어주세요.
 
   - type: input
-    id: module
+    id: env
     attributes:
-      label: 관련 모듈 또는 폴더
-      description: 이 기능이 포함되거나 영향을 주는 코드 위치를 알려주세요.
-      placeholder: 예) preprocessing, crawler, analysis 등
+      label: 실행 환경
+      description: 현재 실행 중인 환경 정보
+      placeholder: 예) MacOS, Python 3.10, VS Code, Chrome 버전 등
     validations:
       required: true
 
   - type: textarea
-    id: summary
+    id: symptoms
     attributes:
-      label: 기능 요약
-      description: 이 기능이 어떤 역할을 하는지 한 문장으로 설명해주세요.
-      placeholder: 예) 댓글 감정 점수에 따라 색상 표시 추가
-    validations:
-      required: true
-
-  - type: textarea
-    id: details
-    attributes:
-      label: 상세 설명
-      description: 기능의 작동 방식, 기대 효과, 데이터 흐름 등을 자세히 작성해주세요.
+      label: 문제 증상 / 에러 메시지
+      description: 실제 발생한 문제와 메시지를 가능한 한 구체적으로 적어주세요.
       placeholder: |
-        - 입력: 감정 점수 CSV
-        - 처리: 점수 범위별로 색상 지정
-        - 출력: 시각화 결과 HTML
+        - 3000개까지만 수집되고 멈춤
+        - 콘솔 에러 메시지: TimeoutException: ...
     validations:
       required: true
 
   - type: textarea
-    id: reference
+    id: reproduce
     attributes:
-      label: 참고자료 / 관련 코드
-      description: 참고한 링크, 예시 코드, 이슈 번호 등을 입력해주세요.
+      label: 재현 절차
+      description: 해당 오류를 어떻게 재현할 수 있는지 단계별로 설명해주세요.
+      placeholder: |
+        1. `python crawler/run_kim.py` 실행
+        2. 특정 작품에서 3000개 수집 후 정지
+        3. 더보기 버튼 비활성화 또는 예외 발생
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 동작
+      description: 원래는 어떤 결과가 나왔어야 하는지 작성해주세요.
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 첨부 자료
+      description: 에러 화면 캡처 또는 참고할만한 로그가 있다면 추가해주세요.
     validations:
       required: false
