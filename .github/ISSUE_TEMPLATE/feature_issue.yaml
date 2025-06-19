@@ -39,13 +39,16 @@ body:
       required: true
 
   - type: textarea
-    id: reference
+    id: details
     attributes:
       label: 참고자료 / 관련 코드
       description: 참고한 링크, 예시 코드, 이슈 번호 등을 입력해주세요.
-            placeholder: |
+      placeholder: |
         - 링크: www.example.com
-        - 예시 코드: 
-        - 이슈 :#12
+        - 코드: ''' python
+          def example():
+              pass
+          '''
+        - 이슈: 시작#12
     validations:
-      required: falseß
+      required: false
