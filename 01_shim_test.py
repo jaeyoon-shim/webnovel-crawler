@@ -35,9 +35,11 @@ prefs = {
 }
 options.add_experimental_option("prefs", prefs)
 
+
 # ========== 3. 저장 경로 ==========
-output_folder = os.path.join(os.path.expanduser('~'), 'Downloads', 'kakao_comments')
+output_folder = os.path.join('data', 'raw')
 os.makedirs(output_folder, exist_ok=True)
+
 
 def get_filename(episode_title):
     now = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
