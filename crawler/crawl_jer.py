@@ -1,3 +1,5 @@
+# ipynb -> py 로 변경함
+
 import os
 import csv
 import datetime
